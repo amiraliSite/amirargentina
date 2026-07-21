@@ -401,7 +401,7 @@ export default function ArgentinaUltimate() {
             {achievements.map((ach, idx) => (
               <div
                 key={ach.title}
-                className="group relative"
+                className="group relative h-full"
                 style={{
                   transition: `all 1s cubic-bezier(0.34, 1.56, 0.64, 1) ${idx * 0.15}s`,
                   transform: visibleSections.stats ? "translateY(0) scale(1)" : "translateY(60px) scale(0.8)",
@@ -409,18 +409,18 @@ export default function ArgentinaUltimate() {
                 }}
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${ach.color} blur-xl opacity-30 group-hover:opacity-70 transition-opacity duration-500`}></div>
-                <div className={`relative ${t.card} backdrop-blur-xl border ${t.border} rounded-2xl md:rounded-3xl p-4 md:p-8 text-center hover:border-sky-400/50 transition-all duration-500 hover:-translate-y-2 md:hover:-translate-y-3 hover:shadow-2xl`}>
+                <div className={`relative ${t.card} backdrop-blur-xl border ${t.border} rounded-2xl md:rounded-3xl p-4 md:p-8 text-center hover:border-sky-400/50 transition-all duration-500 hover:-translate-y-2 md:hover:-translate-y-3 hover:shadow-2xl h-full flex flex-col`}>
                   <div className={`mb-3 md:mb-4 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500 ${theme === "dark" ? "text-sky-400" : "text-sky-600"}`}>
                     {ach.icon}
                   </div>
-                  <div className={`text-4xl md:text-6xl font-black bg-gradient-to-b ${theme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"} bg-clip-text text-transparent mb-2`}>
+                  <div className={`text-4xl p-2 md:text-6xl font-black bg-gradient-to-b ${theme === "dark" ? "from-white to-gray-400" : "from-gray-900 to-gray-600"} bg-clip-text text-transparent mb-2`}>
                     {ach.title === "جام جهانی" ? counters.worldCups :
                      ach.title === "کوپا آمریکا" ? counters.copaAmerica :
                      ach.title === "فینالیسیما" ? counters.finalissima :
                      counters.olympics}
                   </div>
                   <div className="text-base md:text-xl font-bold mb-1 md:mb-2">{ach.title}</div>
-                  <div className={`text-xs ${t.muted} leading-relaxed hidden md:block`}>
+                  <div className={`text-xs ${t.muted} leading-relaxed hidden md:block min-h-[3rem] md:min-h`}>
                     {ach.description}
                   </div>
                   <div className="mt-3 md:mt-4 flex flex-wrap gap-1 justify-center">
